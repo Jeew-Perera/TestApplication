@@ -1,0 +1,9 @@
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.deps.json
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfo.cs
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache

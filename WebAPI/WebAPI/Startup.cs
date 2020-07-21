@@ -1,17 +1,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using BusinessLayer;
+using DataAccessLayer;
+using DataAccessLayer.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using WebAPI.Models;
+using Microsoft.IdentityModel.Tokens;
+//using WebAPI.Models;
 
 namespace WebAPI
 {
@@ -27,21 +33,42 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddDbContext<AuthenticationContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"))
+            //Inject appsettings
+            //services.Configure<ApplicationSettings>(Configuration.GetSection("Jwt"));
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
-            services.AddDefaultIdentity<ApplicationUser>()
-                .AddEntityFrameworkStores<AuthenticationContext>();
-            services.Configure<IdentityOptions>(options =>
-            {
-                options.Password.RequireDigit = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredLength = 4;
-            });
-            services.AddCors();
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddControllers();
+
+            services.AddScoped<IBusinessProduct, BusinessProduct>();
+            services.AddScoped<IDAProduct, DAProduct>();
+            services.AddScoped<IBusinessCategory, BusinessCategory>();
+            services.AddScoped<IDACategory, DACategory>();
+            services.AddScoped<IBusinessCustomer, BusinessCustomer>();
+            services.AddScoped<IDACustomer, DACustomer>();
+
+            services.AddDbContext<ShoppingCartContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("JeewConnection"))
+            );
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:JWT_Secret"]))
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +80,7 @@ namespace WebAPI
             }
 
             app.UseCors(builder =>
-            builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+            builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString()).AllowAnyHeader().AllowAnyMethod());
 
             app.UseAuthentication();
 

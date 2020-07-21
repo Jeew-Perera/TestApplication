@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wdmDzxcxRVfaWqc1oagbvrcgQC1Tm5QYmoIKoknew9N6PhgnLFZehhkvkFBouKSnQArNutFTM2ghkAGLW/ybow==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

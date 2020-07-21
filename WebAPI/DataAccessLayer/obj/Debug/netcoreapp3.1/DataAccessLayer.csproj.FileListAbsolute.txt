@@ -1,0 +1,12 @@
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.deps.json
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.AssemblyInfo.cs
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CopyComplete
