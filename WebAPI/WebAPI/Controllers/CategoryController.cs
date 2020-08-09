@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BusinessLayer;
 using EntityLayer;
+using EntityLayer.CategoryDto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,17 +14,18 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IBusinessCategory _iBusinessCategory;
-        public CategoryController(IBusinessCategory iBusinessCategory)
+        private readonly ICategoryManager _iCategoryManager;
+        public CategoryController(ICategoryManager iCategoryManager)
         {
-            _iBusinessCategory = iBusinessCategory;
+            _iCategoryManager = iCategoryManager;
         }
 
         [HttpGet]
         [Route("Categories")]
-        public List<CategoryViewModel> GetCategories()
+        public async Task<IActionResult> GetCategories()
         {
-            return _iBusinessCategory.GetCategories().ToList();
+            var categories = await _iCategoryManager.GetCategories();
+            return Ok(categories);
         }
     }
 }

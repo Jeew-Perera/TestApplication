@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\BusinessLayer\\BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\BusinessLayer\\BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -115,6 +115,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.7.1, )"
             }
           },
           "imports": [
@@ -142,14 +146,14 @@
         }
       }
     },
-    "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -200,14 +204,14 @@
         }
       }
     },
-    "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -223,11 +227,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -270,6 +274,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.3, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
             }
           },
           "imports": [

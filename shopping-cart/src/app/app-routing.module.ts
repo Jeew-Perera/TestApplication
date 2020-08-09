@@ -5,15 +5,18 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { PageNotFoundComponent } from './component/shared/page-not-found/page-not-found.component';
 import { ProductViewComponent } from './component/product-view/product-view.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { MainCartComponent } from './component/main-cart/main-cart.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes : Routes = [
-    { path : '', redirectTo: '/products', pathMatch:'full'},
+    //{ path : '', redirectTo: '/products', pathMatch:'full'},
     { path : 'login', component : LoginComponent },
     { path : 'register', component : RegisterComponent},
-    // { path : 'products', component : ShoppingCartComponent, data: { kind: 'list' }},
     { path : 'products', component : ShoppingCartComponent},
     { path : 'product/:id', component: ProductViewComponent },
-    //{ path : 'products/category/:id', component: ShoppingCartComponent, data: { kind: 'category' } },  //jeew 
+    { path : 'profile', component: ProfileComponent, canActivate:[AuthGuard] }, 
+    { path : 'cart', component : MainCartComponent},  
     { path : '**', component : PageNotFoundComponent} 
 ];
 

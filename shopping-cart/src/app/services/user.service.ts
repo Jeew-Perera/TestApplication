@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
     providedIn: 'root'
@@ -9,10 +12,12 @@ import { HttpClient } from '@angular/common/http'
 export class UserService{
 
     constructor(private fb : FormBuilder, private httpClient : HttpClient){}
-    readonly BaseUri = 'http://localhost:59278/api';
+    private JwtHelper = new JwtHelperService();
+    private readonly baseUrl = environment.baseUri + 'Customer/';
+    decodeToken: any;
 
     formModel = this.fb.group({
-        name: ['', Validators.required],
+        customername: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         address: [''],
         phone: [''],
@@ -20,7 +25,7 @@ export class UserService{
             password: ['', [Validators.required, Validators.minLength(4)]],
             confirmPassword: ['', Validators.required]
         }, {validator : this.comparePasswords})
-    });
+    }); 
 
     comparePasswords(fg : FormGroup){
         let confirmPasswordCtrl = fg.get('confirmPassword');
@@ -34,12 +39,38 @@ export class UserService{
 
     register(){
         var body = {
-            Name : this.formModel.value.Name,
-            Email : this.formModel.value.Email,
-            Address : this.formModel.value.Address,
-            Phone : this.formModel.value.Phone,
-            Password : this.formModel.value.Password
+            CustomerName : this.formModel.value.customername,
+            Email : this.formModel.value.email,
+            CustomerAddress : this.formModel.value.address,
+            Phone : this.formModel.value.phone,
+            Password : this.formModel.value.passwords.password
         };
-        return this.httpClient.post(this.BaseUri+'/Customer/Register', body);
+        console.log(body);
+        return this.httpClient.post(this.baseUrl + 'Register', body);
+    }
+
+    login(formData){
+        console.log(formData);
+        //return this.httpClient.post(this.baseUrl+'Login', formData);
+        return this.httpClient.post(this.baseUrl + 'Login', formData)
+                .pipe(
+                    map((res:any) => {
+                        console.log("inside service login method");
+                        const token  = res;
+                        if(token){
+                            localStorage.setItem('token',JSON.stringify(token));
+                            this.decodeToken = token;
+                            console.log(this.decodeToken);
+                            //console.log(this.decodeToken.email);
+                            //console.log(this.decodeToken.unique_name);
+                        }
+                    })
+                );
+    }
+
+    userLoggedIn(){
+        const token = localStorage.getItem('token');
+        console.log("saved val : ", JSON.parse(token));
+        return !this.JwtHelper.isTokenExpired(token);
     }
 }

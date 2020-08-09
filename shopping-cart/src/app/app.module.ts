@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -23,6 +25,8 @@ import { PageNotFoundComponent } from './component/shared/page-not-found/page-no
 import { ProductViewComponent } from './component/product-view/product-view.component';
 import { RouterModule } from '@angular/router';
 import { UserService } from './services/user.service';
+import { ProfileComponent } from './component/profile/profile.component';
+import { MainCartComponent } from './component/main-cart/main-cart.component';
 //import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
@@ -43,6 +47,8 @@ import { UserService } from './services/user.service';
     RegisterComponent,
     PageNotFoundComponent,
     ProductViewComponent,
+    ProfileComponent,
+    MainCartComponent,
     //ProductDetailComponent
   ],
   imports: [
@@ -50,7 +56,9 @@ import { UserService } from './services/user.service';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

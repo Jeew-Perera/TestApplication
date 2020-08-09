@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer;
 using DataAccessLayer.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
+using EntityLayer.CustomerDto;
+using AutoMapper;
+using Microsoft.Extensions.Configuration;
 
 namespace WebAPI.Controllers
 {
@@ -19,77 +15,50 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly IBusinessCustomer _iBusinessCustomer;
-
-        //private readonly ApplicationSettings _appSettings;
-
-        //public CustomerController(ShoppingCartContext context, IOptions<ApplicationSettings> appSettings)
-        public CustomerController(IBusinessCustomer iBusinessCustomer)
+        private readonly ICustomerManager _iBusinessCustomer;
+        public CustomerController(ICustomerManager iBusinessCustomer)
         {
-            _iBusinessCustomer = iBusinessCustomer;
+            _iBusinessCustomer = iBusinessCustomer; //manager
         }
 
         [HttpPost]
         [Route("Register")]
-        public async Task<Object> Register([FromBody] Customer customer)
+        public async Task<IActionResult> Register(CustomerForRegisterDto customer)
         {
-            var returnVal = _iBusinessCustomer.RegisterCustomer(customer);
-            if (returnVal.Equals(-1))
-            {
-                return Conflict();
-            }
-            else
-            {
-                return Ok();
-            }
-
-            //byte[] saltBytes = GeneratePasswordSalt();
-            //byte[] passwordAsBytes = Encoding.UTF8.GetBytes(customer.Password);
-            //List<byte> passwordWithSaltBytes = new List<byte>();
-            //passwordWithSaltBytes.AddRange(passwordAsBytes);
-            //passwordWithSaltBytes.AddRange(saltBytes);
-            //string a = Convert.ToBase64String(SHA256.Create().ComputeHash(passwordWithSaltBytes.ToArray())); //password
-            //string b = Convert.ToBase64String(saltBytes);
-
-            //customer.Password = a;
-            //customer.Salt = b;
-
-            //_context.Customer.Add(customer);
-
-            //try
-            //{
-            //    _context.SaveChanges();
-            //}
-            //catch (DbUpdateException)
-            //{
-            //    if (CustomerExists(customer.Email))
-            //    {
-            //        return Conflict();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-
-            //return Ok(customer);
-            ////return CreatedAtAction("GetCustomer", new { id = customer.CustomerId }, customer);
+            if (!await _iBusinessCustomer.RegisterCustomer(customer))
+                return BadRequest("Email address already exists");
+            return Ok();
 
         }
 
-        //private bool CustomerExists(string email)
-        //{
-        //    return _context.Customer.Any(e => e.Email == email);
-        //}
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login(CustomerForLoginDto customerForLoginDto)
+        {
+            var customer = await _iBusinessCustomer.Login(customerForLoginDto.Email, customerForLoginDto.Password);
+            if (customer == null)
+            {
+                return BadRequest(new { message = "Username or password incorrect" });
+            }
+            else if (customer.Token == null)
+            {
+                return Unauthorized();
+            }
+            else
+            {
+                return Ok(new { token = customer.Token });
+            }
+        }
 
-        //private byte[] GeneratePasswordSalt()
-        //{
-        //    int keyLength = 20;
-        //    var rngCsp = new RNGCryptoServiceProvider();
-        //    byte[] randomBytes = new byte[keyLength];
-        //    rngCsp.GetBytes(randomBytes);
-        //    return randomBytes;
-        //}
+        [HttpGet]
+        [Authorize]
+        [Route("UserProfile")]
+        public async Task<CustomerProfileDto> GetUserProfile()
+        {
+            string email = User.Claims.First(c => c.Type == "UserID").Value;
+            CustomerProfileDto user = await _iBusinessCustomer.GetProfileDetails(email);
+            return user;
+        }
 
         //[HttpPost]
         //[Route("Login")]

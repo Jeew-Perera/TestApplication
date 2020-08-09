@@ -9,10 +9,16 @@
             <strong>{{ productItem.unitPrice | currency:'LKR'}}</strong>
         </p>
         <p class="card-text">{{ productItem.productDescription | slice: 0:30 }}...</p>
+        <input type="number" min="1" max="5" style="margin-right: 5px;" [(ngModel)]="productItem.userEnteredCount" placeholder="1">
+        {{productItem.userEnteredCount}}
+        <!-- {{cartHasItems}}  -->
         <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
+            
+            <div class="btn-group"> 
+                
                 <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">Add to Cart</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary product-btn" [routerLink]="['/product/', productItem.productId]"  (click)="handleDisplayProductDetails()">View Details</button>
+                <!-- <button type="button" class="btn btn-sm btn-outline-secondary product-btn" [routerLink]="['/product/', productItem.productId]"  (click)="handleDisplayProductDetails()">View Details</button> -->
+                <button type="button" class="btn btn-sm btn-outline-secondary product-btn" [routerLink]="['/product/', productItem.productId]">View Details</button>
             </div>
       </div>
     </div>

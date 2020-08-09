@@ -21,7 +21,7 @@ export class ProductService {
   // ]
 
   constructor(private http: HttpClient) { }
-  readonly BaseUri = 'http://localhost:59278/api';
+  readonly BaseUri = 'http://localhost:59278/api'; 
 
   getProducts() : Observable<Product[]> {
       return this.http.get<Product[]>(this.BaseUri + '/Product/Products');

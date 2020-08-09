@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BusinessLayer;
+﻿using BusinessLayer;
 using DataAccessLayer.Models;
-using EntityLayer;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
@@ -14,38 +11,36 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IBusinessProduct _iBusinessProduct;
+        private readonly IProductManager _iProductManager;
+        private readonly ILogger _iLogger;
 
-        public ProductController(IBusinessProduct iBusinessProduct)
+        public ProductController(IProductManager iProductManager, ILogger<ProductController> iLogger)
         {
-            _iBusinessProduct = iBusinessProduct;
+            _iProductManager = iProductManager;
+            _iLogger = iLogger;
         }
 
         [HttpGet]
         [Route("Products")]
-        public List<Product> GetProducts()
+        public async Task<IActionResult> GetProducts()
         {
-            //BusinessProduct bp = new BusinessProduct();
-            return _iBusinessProduct.GetAllProductDetails().ToList();
-            //List<Product> products = null;
-            //return products = _context.Product.ToList();
+            _iLogger.LogInformation("Start get all products");
+            var products = await _iProductManager.GetAllProductDetails();
+            return Ok(products);
         }
 
         [HttpGet("{productId}")]
-        //[Route("Prods")]
-        public ProductViewModel Get(int productId)
+        public async Task<IActionResult> Get(int productId)
         {
-            //BusinessProduct bp = new BusinessProduct();
-            return _iBusinessProduct.GetProductDetailsById(productId);
-            //List<Product> products = null;
-            //return products = _context.Product.ToList();
+            var product = await _iProductManager.GetProductDetailsById(productId);
+            return Ok(product);
         }
 
-        [Route("[action]/{categoryId}")]
-        [HttpGet]
-        public List<Product> GetProductsByCategory(int categoryId)
+        [HttpGet("[action]/{categoryId}")]
+        public async Task<IActionResult> GetProductsByCategory(int categoryId)
         {
-            return _iBusinessProduct.GetProductsByCategory(categoryId);
+            var categoryBasedProduct = await _iProductManager.GetProductsByCategory(categoryId);
+            return Ok(categoryBasedProduct);
         }
     }
 }

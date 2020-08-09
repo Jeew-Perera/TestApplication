@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj",
+      "projectUniqueName": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj",
       "projectName": "EntityLayer",
-      "projectPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\EntityLayer.csproj",
+      "projectPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\EntityLayer.csproj",
       "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hp\\Desktop\\Jeew babi\\Assignmnet Ready\\3\\WebAPI\\EntityLayer\\obj\\",
+      "outputPath": "C:\\Users\\hp\\Documents\\GitHub\\TestApplication\\WebAPI\\EntityLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
