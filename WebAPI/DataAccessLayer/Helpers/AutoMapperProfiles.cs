@@ -12,7 +12,8 @@ namespace DataAccessLayer.Helpers
         {
             CreateMap<Customer, CustomerForLoginDto>();
             CreateMap<Customer, CustomerProfileDto>();
-            CreateMap<CustomerForRegisterDto, Customer>();
+            CreateMap<CustomerForRegisterDto, Customer>()
+            .ForMember(c => c.Password, option => option.Ignore());
 
             CreateMap<Product, ProductListViewDto>();
             CreateMap<Product, ProductDetailViewDto>();

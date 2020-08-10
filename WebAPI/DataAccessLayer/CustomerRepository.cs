@@ -31,16 +31,16 @@ namespace DataAccessLayer
         {
             GenerateHashAndSalt(cusPassword, out byte[] hash, out byte[] salt);
 
-            //Customer customer = _iMapper.Map<CustomerForRegisterDto, Customer>(customer1);
+            Customer customer = _iMapper.Map<CustomerForRegisterDto, Customer>(customer1);
 
-            var customer = new Customer
-            {
-                CustomerName = customer1.CustomerName,
-                Email = customer1.Email,
-                CustomerAddress = customer1.CustomerAddress
-            ,
-                Phone = customer1.Phone
-            };
+            //var customer = new Customer
+            //{
+            //    CustomerName = customer1.CustomerName,
+            //    Email = customer1.Email,
+            //    CustomerAddress = customer1.CustomerAddress
+            //,
+            //    Phone = customer1.Phone
+            //};
 
             customer.Password = hash;
             customer.Salt = salt;
