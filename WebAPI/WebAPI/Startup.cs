@@ -1,23 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using BusinessLayer;
-using DataAccessLayer;
 using DataAccessLayer.Helpers;
 using DataAccessLayer.UnitOfWork;
 using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -83,10 +76,9 @@ namespace WebAPI
             services.AddScoped<ICategoryManager, CategoryManager>();
 
             services.AddScoped<ICustomerManager, CustomerManager>();
-            //services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddDbContext<ShoppingCartContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("JeewConnection"))
+                options.UseSqlServer(Configuration.GetConnectionString("JeewConnection"), b => b.MigrationsAssembly("WebAPI"))
             );
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -1,8 +1,4 @@
-﻿using DataAccessLayer.Models;
-using EntityLayer.CustomerDto;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EntityLayer.CustomerDto;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer
@@ -12,6 +8,6 @@ namespace DataAccessLayer
         Task<bool> CustomerExists(string email);
         Task<CustomerProfileDto> GetProfileDetails(string email);
         Task<CustomerForLoginDto>  Login(string email, string password);
-        Task<CustomerForRegisterDto> RegisterCustomer(CustomerForRegisterDto user, string password);
+        Task<CustomerForRegisterDto> RegisterCustomer(CustomerForRegisterDto customerForRegisterDto, string password);
     }
 }

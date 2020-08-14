@@ -164,6 +164,11 @@ C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\WebAPI\bin\Debug\netcore
 C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -213,6 +218,7 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -224,10 +230,21 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.AspNetCore.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Extensions.Hosting.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Formatting.Compact.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Settings.Configuration.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.Debug.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
@@ -256,7 +273,6 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
@@ -298,15 +314,12 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
@@ -321,6 +334,9 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfoInputs.cache
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfo.cs
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.RazorTargetAssemblyInfo.cache
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CopyComplete
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\WebAPI.StaticWebAssets.Manifest.cache
@@ -328,19 +344,3 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.pdb
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.genruntimeconfig.cache
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.AspNetCore.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Extensions.Hosting.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Formatting.Compact.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Settings.Configuration.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.Debug.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Models;
+using System.Threading.Tasks;
 
 namespace DataAccessLayer.UnitOfWork
 {
@@ -41,9 +42,9 @@ namespace DataAccessLayer.UnitOfWork
             }
         }
 
-        public void Commit()
+        public async Task Commit()
         {
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public void Rollback()

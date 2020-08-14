@@ -2,12 +2,8 @@
 using DataAccessLayer;
 using DataAccessLayer.UnitOfWork;
 using EntityLayer.ProductDto;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace UnitTestProject.Business

@@ -1,18 +1,9 @@
 ﻿using AutoMapper;
 using DataAccessLayer.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.Extensions.Configuration;
-using System.Security.Claims;
-using System.Reflection.Metadata;
 using EntityLayer.CustomerDto;
+using System;
 
 namespace DataAccessLayer
 {
@@ -27,28 +18,19 @@ namespace DataAccessLayer
             _iMapper = iMapper;
         }
 
-        public async Task<CustomerForRegisterDto> RegisterCustomer(CustomerForRegisterDto customer1, string cusPassword)
+        public async Task<CustomerForRegisterDto> RegisterCustomer(CustomerForRegisterDto customerForRegisterDto, string password)
         {
-            GenerateHashAndSalt(cusPassword, out byte[] hash, out byte[] salt);
+            GenerateHashAndSalt(password, out byte[] hash, out byte[] salt);
 
-            Customer customer = _iMapper.Map<CustomerForRegisterDto, Customer>(customer1);
-
-            //var customer = new Customer
-            //{
-            //    CustomerName = customer1.CustomerName,
-            //    Email = customer1.Email,
-            //    CustomerAddress = customer1.CustomerAddress
-            //,
-            //    Phone = customer1.Phone
-            //};
+            Customer customer = _iMapper.Map<CustomerForRegisterDto, Customer>(customerForRegisterDto);
 
             customer.Password = hash;
             customer.Salt = salt;
 
             await _context.Customer.AddAsync(customer);
-            await _context.SaveChangesAsync();
+            //await _context.SaveChangesAsync();
 
-            return customer1;
+            return customerForRegisterDto;
         }
         private void GenerateHashAndSalt(string cusPassword, out byte[] hash, out byte[] salt)
         {
@@ -66,14 +48,14 @@ namespace DataAccessLayer
             return false;
         }
 
-        public async Task<CustomerForLoginDto> Login(string email, string cusPassword)
+        public async Task<CustomerForLoginDto> Login(string email, string password)
         {
             var user = await _context.Customer.FirstOrDefaultAsync(x => x.Email == email);
 
             if (user == null)
                 return null;
 
-            if (!ValidatePassword(cusPassword, user.Password, user.Salt))
+            if (!ValidatePassword(password, user.Password, user.Salt))
                 return null;
 
             return _iMapper.Map<CustomerForLoginDto>(user);

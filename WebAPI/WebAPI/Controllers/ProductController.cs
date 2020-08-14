@@ -1,5 +1,4 @@
 ﻿using BusinessLayer;
-using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -21,7 +20,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Products")]
         public async Task<IActionResult> GetProducts()
         {
             _iLogger.LogInformation("Start get all products");
@@ -36,7 +34,7 @@ namespace WebAPI.Controllers
             return Ok(product);
         }
 
-        [HttpGet("[action]/{categoryId}")]
+        [HttpGet("category/{categoryId}")]
         public async Task<IActionResult> GetProductsByCategory(int categoryId)
         {
             var categoryBasedProduct = await _iProductManager.GetProductsByCategory(categoryId);

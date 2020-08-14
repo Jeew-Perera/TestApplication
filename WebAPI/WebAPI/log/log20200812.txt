@@ -1,0 +1,21 @@
+2020-08-12 10:45:57.416 +05:30 [ERR] An error occurred using a transaction.
+2020-08-12 10:47:56.501 +05:30 [ERR] An error occurred using a transaction.
+2020-08-12 10:55:10.595 +05:30 [ERR] An error occurred using a transaction.
+2020-08-12 11:01:06.231 +05:30 [ERR] An error occurred using a transaction.
+2020-08-12 11:15:15.166 +05:30 [ERR] An error occurred using a transaction.
+2020-08-12 11:20:59.636 +05:30 [ERR] An error occurred using a transaction.
+2020-08-12 11:23:02.003 +05:30 [ERR] An error occurred using a transaction.
+2020-08-12 11:25:27.280 +05:30 [ERR] Failed executing DbCommand (1,760ms) [Parameters=[@p0='?' (Size = 250), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 8000) (DbType = Binary), @p4='?' (DbType = Int32), @p5='?' (Size = 8000) (DbType = Binary)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customer] ([CustomerAddress], [CustomerName], [Email], [Password], [Phone], [Salt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [CustomerId]
+FROM [Customer]
+WHERE @@ROWCOUNT = 1 AND [CustomerId] = scope_identity();
+2020-08-12 13:49:50.199 +05:30 [INF] Start get all products
+2020-08-12 13:59:33.599 +05:30 [INF] Start get all products
+2020-08-12 14:03:51.920 +05:30 [INF] Start get all products
+2020-08-12 14:09:36.512 +05:30 [INF] Start get all products
+2020-08-12 14:10:09.826 +05:30 [INF] Start get all products
+2020-08-12 14:46:59.927 +05:30 [INF] Start get all products
+2020-08-12 20:25:08.266 +05:30 [INF] Start get all products

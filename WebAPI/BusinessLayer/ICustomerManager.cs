@@ -1,8 +1,4 @@
-﻿using DataAccessLayer.Models;
-using EntityLayer.CustomerDto;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EntityLayer.CustomerDto;
 using System.Threading.Tasks;
 
 namespace BusinessLayer

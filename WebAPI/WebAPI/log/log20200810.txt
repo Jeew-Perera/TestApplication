@@ -41,3 +41,14 @@ System.Char -> System.Byte
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-08-10 12:25:11.122 +05:30 [ERR] An error occurred using a transaction.
+2020-08-10 12:29:08.930 +05:30 [ERR] Failed executing DbCommand (145ms) [Parameters=[@p0='?' (Size = 250), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 8000) (DbType = Binary), @p4='?' (DbType = Int32), @p5='?' (Size = 8000) (DbType = Binary)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Customer] ([CustomerAddress], [CustomerName], [Email], [Password], [Phone], [Salt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [CustomerId]
+FROM [Customer]
+WHERE @@ROWCOUNT = 1 AND [CustomerId] = scope_identity();
+2020-08-10 15:16:07.286 +05:30 [ERR] An error occurred using a transaction.
+2020-08-10 15:36:08.697 +05:30 [ERR] An error occurred using a transaction.
+2020-08-10 16:40:12.015 +05:30 [ERR] An error occurred using a transaction.

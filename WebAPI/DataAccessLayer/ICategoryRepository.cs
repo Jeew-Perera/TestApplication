@@ -1,8 +1,5 @@
-﻿using EntityLayer;
-using EntityLayer.CategoryDto;
-using System;
+﻿using EntityLayer.CategoryDto;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer

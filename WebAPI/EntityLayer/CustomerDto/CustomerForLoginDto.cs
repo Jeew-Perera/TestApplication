@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EntityLayer.CustomerDto
+﻿namespace EntityLayer.CustomerDto
 {
     public class CustomerForLoginDto
     {

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BusinessLayer;
-using EntityLayer;
-using EntityLayer.CategoryDto;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -21,7 +16,6 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Categories")]
         public async Task<IActionResult> GetCategories()
         {
             var categories = await _iCategoryManager.GetCategories();

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EntityLayer.CategoryDto
+﻿namespace EntityLayer.CategoryDto
 {
     public class CategoryDisplayDto
     {

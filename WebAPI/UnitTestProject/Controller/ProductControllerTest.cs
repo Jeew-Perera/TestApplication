@@ -1,13 +1,10 @@
 ﻿using BusinessLayer;
-using DataAccessLayer.Models;
 using EntityLayer.ProductDto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using WebAPI.Controllers;
 
@@ -43,12 +40,12 @@ namespace UnitTestProject.Controller
 
             Task<IActionResult> result = _productController.GetProducts();
 
-            OkObjectResult okResult = (OkObjectResult) result.Result;
-            List<ProductListViewDto> list = (List<ProductListViewDto>) okResult.Value;
-            Assert.AreEqual(okResult.StatusCode, 200);
-            Assert.AreEqual(list.Count, 2);
-            Assert.AreEqual(list[0].ProductName, "TestProduct_1");
-            Assert.AreEqual(list[0].UnitPrice, 1800);
+            OkObjectResult okResult = (OkObjectResult)result.Result;
+            List<ProductListViewDto> list = (List<ProductListViewDto>)okResult.Value;
+            Assert.AreEqual(200, okResult.StatusCode);
+            Assert.AreEqual(2, list.Count);
+            Assert.AreEqual("TestProduct_1", list[0].ProductName);
+            Assert.AreEqual(1800, list[0].UnitPrice);
 
         }
 
@@ -65,10 +62,10 @@ namespace UnitTestProject.Controller
             Task<IActionResult> result = _productController.Get(1);
 
             OkObjectResult okResult = (OkObjectResult)result.Result;
-            ProductDetailViewDto resultProduct = (ProductDetailViewDto) okResult.Value;
-            Assert.AreEqual(okResult.StatusCode, 200);
-            Assert.AreEqual(resultProduct.ProductName, "TestProduct");
-            Assert.AreEqual(resultProduct.UnitPrice, 1800);
+            ProductDetailViewDto resultProduct = (ProductDetailViewDto)okResult.Value;
+            Assert.AreEqual(200, okResult.StatusCode);
+            Assert.AreEqual("TestProduct", resultProduct.ProductName);
+            Assert.AreEqual(1800, resultProduct.UnitPrice);
         }
 
         [TestMethod]
@@ -90,10 +87,10 @@ namespace UnitTestProject.Controller
 
             OkObjectResult okResult = (OkObjectResult)result.Result;
             List<ProductListViewDto> list = (List<ProductListViewDto>)okResult.Value;
-            Assert.AreEqual(okResult.StatusCode, 200);
-            Assert.AreEqual(list.Count, 2);
-            Assert.AreEqual(list[0].ProductName, "TestProduct_1");
-            Assert.AreEqual(list[0].UnitPrice, 1800);
+            Assert.AreEqual(200, okResult.StatusCode);
+            Assert.AreEqual(2, list.Count);
+            Assert.AreEqual("TestProduct_1", list[0].ProductName);
+            Assert.AreEqual(1800, list[0].UnitPrice);
 
         }
     }
