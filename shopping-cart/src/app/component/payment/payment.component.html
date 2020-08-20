@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-md-5">
+        <div class="guest-form-card card">
+            <div class="card-header text-center">
+                <h2>Order Details</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-borderless table-sm">
+                        <thead>
+                            <tr class="order-details-header">
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Sub Total</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cartItem of cartItems">
+                                <th class="order-details-body">
+                                    {{ cartItem.productName}}<br/><I>(LKR {{cartItem.unitPrice}})</I>
+                                </th>
+                                <th class="order-details-body">{{cartItem.quantity}}</th>
+                                <th class="order-details-body">{{ (cartItem.unitPrice * cartItem.quantity) | currency :'LKR '}}</th>
+                            </tr>
+                            <tr>
+                                Grand Total {{ getCartTotal()}}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="guest-form-card card">
+            <div class="card-header text-center">
+                <h2>Payment Details</h2>
+            </div>
+            <div class="card-body">
+                <form autocomplete="off">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Billing Details</h6>
+                            <label>Name</label>
+                            <input class="form-control" [readonly]="true" value="Jeew"/><br/>
+                            <label>Email</label>
+                            <input class="form-control" [readonly]="true" value="r.jeewperera@gmail.com"/><br/>
+                            <label>Address</label>
+                            <input class="form-control" [readonly]="true" value="Kadawatha"/><br/>
+                            <label>Phone</label>
+                            <input class="form-control" [readonly]="true" value="0772349240"/><br/>
+                            <label>
+                                <input type="checkbox"/> Same Receiver Details
+                            </label>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Receiver Details</h6>
+                            <label>Name</label>
+                            <input class="form-control" value="Jeew"/><br/>
+                            <label>Address</label>
+                            <input class="form-control" value="Kadawatha"/><br/>
+                            <label>Phone</label>
+                            <input class="form-control" value="0705823543"/><br/>
+                        </div>
+                    </div>
+                    <hr/>
+                    <h6>Card Details</h6>
+                    <div class="form-group required">
+                         <!-- <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button>Option 1</mat-radio-button>
+                            <mat-radio-button>Option 2</mat-radio-button>
+                          </mat-radio-group>
+                          <br/>  -->
+                        <label>Card Type</label>
+                        <br/>
+                        <input type="radio" value="Visa"/>
+                        <label>Visa</label>
+                        <input type="radio" value="Master"/>
+                        <label>Master</label>
+                    </div>
+                    <div class="form-group required">
+                        <label>Card Number</label>
+                        <input class="form-control"/>
+                    </div>
+                    <div class="form-group required">
+                        <label>Expiration Date</label>
+                        <input class="form-control"/>
+                    </div>
+                    <div class="form-group required">
+                        <label>CVN</label>
+                        <input class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-outline-secondary btn-block" [routerLink]="['/cart']">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-block">Pay</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

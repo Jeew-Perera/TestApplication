@@ -3,9 +3,6 @@
         <strong>Categories</strong>
     </div>
     <div class="card-body" *ngFor="let category of categoryList">
-        <!-- <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">{{category.categoryName}}</a>
-        </nav> -->
         <app-category-item [categoryItem]=category></app-category-item>
     </div>
 </div>

@@ -28,5 +28,14 @@ namespace BusinessLayer
         {
             return await _iUnitOfWork.ProductRepository.GetProductsByCategory(categoryId);
         }
+
+        //public async Task<CategoryBasedProductListViewDto> GetProductsByCategory(int categoryId)
+        //{
+        //    var abc = await _iUnitOfWork.ProductRepository.GetProductsByCategory(categoryId);
+        //    CategoryBasedProductListViewDto aaa = new CategoryBasedProductListViewDto();
+        //    aaa.CategoryId = categoryId;
+        //    aaa.ProductList = abc;
+        //    return aaa;
+        //}
     }
 }

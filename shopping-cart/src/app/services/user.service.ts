@@ -51,7 +51,6 @@ export class UserService{
 
     login(formData){
         console.log(formData);
-        //return this.httpClient.post(this.baseUrl+'Login', formData);
         return this.httpClient.post(this.baseUrl + 'Login', formData)
                 .pipe(
                     map((res:any) => {
@@ -61,8 +60,6 @@ export class UserService{
                             localStorage.setItem('token',JSON.stringify(token));
                             this.decodeToken = token;
                             console.log(this.decodeToken);
-                            //console.log(this.decodeToken.email);
-                            //console.log(this.decodeToken.unique_name);
                         }
                     })
                 );

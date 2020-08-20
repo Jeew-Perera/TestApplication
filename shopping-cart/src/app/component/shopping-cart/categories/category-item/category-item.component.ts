@@ -16,7 +16,6 @@ export class CategoryItemComponent implements OnInit {
   constructor(private message:MessengerService, private productService:ProductService) { }
 
   ngOnInit(): void {
-    //console.log(this.categoryItem);
   }
 
   handleLoadProductsByCategory(category : Category){

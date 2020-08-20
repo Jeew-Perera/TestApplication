@@ -26,8 +26,7 @@ export class LoginComponent implements OnInit {
     this.service.login(loginForm.value).subscribe(
       next => {
         this.toastr.success('Logged in successfully','Message');
-        //localStorage.setItem('token',res.token);
-        this.router.navigateByUrl('/profile');
+        this.router.navigateByUrl('/products');
       },
       error => {
         if(error.status == 400)
@@ -36,18 +35,5 @@ export class LoginComponent implements OnInit {
           console.log(error);
       }
     );
-
-    // this.service.login(loginForm.value).subscribe(
-    //   (res:any)=>{
-    //     localStorage.setItem('token',res.token);
-    //     this.router.navigateByUrl('/profile');
-    //   },
-    //   err => {
-    //     if(err.status == 400)
-    //       this.toastr.error('Incorrect username or password','Authentication failed');
-    //     else  
-    //       console.log(err);
-    //   }
-    // );
   }
 }

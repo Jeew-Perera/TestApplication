@@ -37,5 +37,11 @@ namespace DataAccessLayer
             var categoryBasedProducts = await _context.Product.Where(p => p.CategoryId == categoryId).ToListAsync();
             return _iMapper.Map<ProductListViewDto[]>(categoryBasedProducts);
         }
+
+        //public async Task<IEnumerable<ProductDetailViewDto>> GetProductsByCategory(int categoryId)
+        //{
+        //    var categoryBasedProducts = await _context.Product.Where(p => p.CategoryId == categoryId).ToListAsync();
+        //    return _iMapper.Map<ProductDetailViewDto[]>(categoryBasedProducts);
+        //}
     }
 }

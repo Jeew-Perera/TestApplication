@@ -8,6 +8,7 @@ import { ProductViewComponent } from './component/product-view/product-view.comp
 import { ProfileComponent } from './component/profile/profile.component';
 import { MainCartComponent } from './component/main-cart/main-cart.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PaymentComponent } from './component/payment/payment.component';
 
 const routes : Routes = [
     //{ path : '', redirectTo: '/products', pathMatch:'full'},
@@ -17,6 +18,7 @@ const routes : Routes = [
     { path : 'product/:id', component: ProductViewComponent },
     { path : 'profile', component: ProfileComponent, canActivate:[AuthGuard] }, 
     { path : 'cart', component : MainCartComponent},  
+    { path : 'payment', component : PaymentComponent},  
     { path : '**', component : PageNotFoundComponent} 
 ];
 

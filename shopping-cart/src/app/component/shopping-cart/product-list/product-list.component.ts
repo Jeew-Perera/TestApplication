@@ -15,34 +15,14 @@ import { cartItem } from 'src/app/models/cartItem';
 export class ProductListComponent implements OnInit {
 
   productList:Product[];
-  // public cartHasItems : boolean = false;
-  // public cart : cartItem[] = [];
-  //productListBOC:Product[]=[];
 
   constructor(private productService:ProductService, private route: ActivatedRoute, 
     private message: MessengerService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    // this.cartHasItems = this.cartService.checkCartHasItems();
-    // if(this.cartHasItems){
-    //   this.cart = this.cartService.getCartItems();
-    //   this.productService.getProducts().subscribe((products:Product[]) =>{
-    //     var tempProductList = products;
-    //   });
-
-    // }
-    // this.route.data.subscribe(data => {
-    //   switch(data.kind){
-    //     case 'list':
-          this.productService.getProducts().subscribe((products:Product[]) =>{
-            //console.log(products)
-            this.productList = products;
-          });
-    //       break;
-    //     //case 'category':
-    //     //   this.GetProductsByCategory();
-    //   }
-    // })
+    this.productService.getProducts().subscribe((products:Product[]) =>{
+      this.productList = products;
+    });
 
     this.message.getCategoryMsg().subscribe((category : Category) => {
       this.displayProductsBasedOnCategory(category) 
@@ -56,13 +36,4 @@ export class ProductListComponent implements OnInit {
       console.log(this.productList);
     });
   }
-
-  // GetProductsByCategory(){
-  //     this.productService.getProductsByCategory(+this.route.snapshot.params['id']).subscribe((products:Product[]) =>{
-  //       this.productList = products;
-  //       console.log(this.productList);
-  //     });
-  //   }
-
-
 }

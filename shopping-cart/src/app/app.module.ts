@@ -27,7 +27,7 @@ import { RouterModule } from '@angular/router';
 import { UserService } from './services/user.service';
 import { ProfileComponent } from './component/profile/profile.component';
 import { MainCartComponent } from './component/main-cart/main-cart.component';
-//import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { PaymentComponent } from './component/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { MainCartComponent } from './component/main-cart/main-cart.component';
     ProductViewComponent,
     ProfileComponent,
     MainCartComponent,
-    //ProductDetailComponent
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,

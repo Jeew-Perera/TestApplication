@@ -8,7 +8,6 @@
       <a class="p-2 text-dark" href="#">Payment History</a>
       <a class="p-2 text-dark" *ngIf="loggedIn()" href="#">Logged in as {{ service.decodeToken.unique_name | titlecase }}</a>
     </nav>
-    <!-- <a>Logged in as Jeew</a> -->
     <a class="btn btn-primary" [routerLink]="['/register']">Sign up</a>
     <a class="btn btn-outline-secondary" *ngIf="!loggedIn()"  [routerLink]="['/login']">Login</a>
     <a class="btn btn-outline-secondary" *ngIf="loggedIn()"  (click)="onLogout()" >Logout</a>

@@ -9,5 +9,6 @@ namespace DataAccessLayer
         Task<IEnumerable<ProductListViewDto>> GetAllProductDetails();
         Task<ProductDetailViewDto> GetProductDetailsById(int productId);
         Task<IEnumerable<ProductListViewDto>> GetProductsByCategory(int categoryId);
+        //Task<IEnumerable<ProductDetailViewDto>> GetProductsByCategory(int categoryId);
     }
 }
