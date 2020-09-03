@@ -56,5 +56,10 @@ export class CartService {
   removeItemsFromCart(cartItem : cartItem){
     this.cartItems.splice(this.cartItems.findIndex(x => x.productId === cartItem.productId), 1);
   }
+
+  clearCart(){
+    this.cartItems = [];
+    return this.cartItems;
+  }
   
 }

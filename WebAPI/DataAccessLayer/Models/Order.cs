@@ -8,7 +8,6 @@ namespace DataAccessLayer.Models
         public Order()
         {
             OrderProduct = new HashSet<OrderProduct>();
-            Payment = new HashSet<Payment>();
         }
 
         public int OrderId { get; set; }
@@ -19,7 +18,7 @@ namespace DataAccessLayer.Models
         public decimal OrderTotal { get; set; }
 
         public virtual Customer Customer { get; set; }
+        public virtual Payment Payment { get; set; }
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
-        public virtual ICollection<Payment> Payment { get; set; }
     }
 }

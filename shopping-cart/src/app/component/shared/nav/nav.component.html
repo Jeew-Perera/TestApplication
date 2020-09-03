@@ -6,7 +6,7 @@
       <a class="p-2 text-dark" [routerLink]="['/products']">Products</a>
       <a class="p-2 text-dark" [routerLink]="['/cart']">Cart</a>
       <a class="p-2 text-dark" href="#">Payment History</a>
-      <a class="p-2 text-dark" *ngIf="loggedIn()" href="#">Logged in as {{ service.decodeToken.unique_name | titlecase }}</a>
+      <a class="p-2 text-dark" *ngIf="loggedIn()" href="#">Logged in as {{ getUserEmail() }}</a>
     </nav>
     <a class="btn btn-primary" [routerLink]="['/register']">Sign up</a>
     <a class="btn btn-outline-secondary" *ngIf="!loggedIn()"  [routerLink]="['/login']">Login</a>

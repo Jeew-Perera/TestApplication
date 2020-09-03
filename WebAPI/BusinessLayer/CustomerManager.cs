@@ -36,7 +36,7 @@ namespace BusinessLayer
             return true;
 
         }
-        
+
         public async Task<CustomerForLoginDto> Login(string email, string password)
         {
             var userFromRepo = await _iUnitOfWork.CustomerRepository.Login(email.ToLower(), password);

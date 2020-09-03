@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.register().subscribe( () => {
+    this.service.register().subscribe( () => { 
       this.service.formModel.reset();
       this.toastr.success('New user added', 'Registration successful');
       this.router.navigateByUrl('/login');

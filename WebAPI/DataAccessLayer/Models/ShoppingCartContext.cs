@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DataAccessLayer.Models
 {
@@ -20,14 +22,14 @@ namespace DataAccessLayer.Models
         public virtual DbSet<Payment> Payment { get; set; }
         public virtual DbSet<Product> Product { get; set; }
 
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=LAPTOP-44MBRNB7\\JEEWSQL;Database=ShoppingCart;User Id=sa;Password=rukJeew12511*;Trusted_Connection=True;");
-//            }
-//        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=LAPTOP-44MBRNB7\\JEEWSQL;Database=ShoppingCart;User Id=sa;Password=rukJeew12511*;Trusted_Connection=True;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -59,8 +61,6 @@ namespace DataAccessLayer.Models
 
             modelBuilder.Entity<Order>(entity =>
             {
-                entity.Property(e => e.OrderId).ValueGeneratedNever();
-
                 entity.Property(e => e.OrderDate).HasColumnType("date");
 
                 entity.Property(e => e.OrderStatus)
@@ -97,19 +97,39 @@ namespace DataAccessLayer.Models
 
             modelBuilder.Entity<Payment>(entity =>
             {
+                entity.HasKey(e => e.PayementId)
+                    .HasName("PK__Payment__C4484336516EFCBB");
+
+                entity.HasIndex(e => e.OrderId)
+                    .HasName("UQ__Payment__C3905BCE5F7FFD72")
+                    .IsUnique();
+
                 entity.Property(e => e.Amount).HasColumnType("decimal(18, 2)");
+
+                entity.Property(e => e.CardNumber)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.CardType)
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.Cvn)
+                    .IsRequired()
+                    .HasColumnName("CVN")
+                    .HasMaxLength(50);
+
                 entity.Property(e => e.Date).HasColumnType("date");
 
+                entity.Property(e => e.ExpirationDate)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
                 entity.HasOne(d => d.Order)
-                    .WithMany(p => p.Payment)
-                    .HasForeignKey(d => d.OrderId)
+                    .WithOne(p => p.Payment)
+                    .HasForeignKey<Payment>(d => d.OrderId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Payment_Order");
+                    .HasConstraintName("FK__Payment__OrderId__06CD04F7");
             });
 
             modelBuilder.Entity<Product>(entity =>

@@ -7,7 +7,7 @@ namespace DataAccessLayer
     {
         Task<bool> CustomerExists(string email);
         Task<CustomerProfileDto> GetProfileDetails(string email);
-        Task<CustomerForLoginDto>  Login(string email, string password);
-        Task<CustomerForRegisterDto> RegisterCustomer(CustomerForRegisterDto customerForRegisterDto, string password);
+        Task<CustomerForLoginDto> Login(string email, string password);
+        Task<CustomerForRegisterDto> RegisterCustomer(CustomerForRegisterDto customerforregisterdto, string password);
     }
 }

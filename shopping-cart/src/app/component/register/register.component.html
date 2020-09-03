@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
                 <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()" >
-                    <div class="form-group required">
+                    <div class="form-group required"> 
                         <label>Name</label>
                         <input class="form-control" formControlName="customername" />
                         <label class="text-danger" *ngIf="service.formModel.get('customername').touched && service.formModel.get('customername').errors?.required">Name is required!</label>

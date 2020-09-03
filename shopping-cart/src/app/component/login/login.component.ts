@@ -3,6 +3,7 @@ import { UserService } from 'src/app/services/user.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit {
     password : ['']
   }
 
-  constructor(private service : UserService, private router : Router, private toastr : ToastrService) { }
+  constructor(private service : UserService, private router : Router, private toastr : ToastrService, private cartService : CartService) { }
+
+  public cartHasItems : boolean = false;
 
   ngOnInit(): void {
   }
@@ -26,7 +29,11 @@ export class LoginComponent implements OnInit {
     this.service.login(loginForm.value).subscribe(
       next => {
         this.toastr.success('Logged in successfully','Message');
-        this.router.navigateByUrl('/products');
+        this.cartHasItems = this.cartService.checkCartHasItems();
+        if(this.cartHasItems)
+          this.router.navigateByUrl('/cart');
+        else
+          this.router.navigateByUrl('/products');
       },
       error => {
         if(error.status == 400)

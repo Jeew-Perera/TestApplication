@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Observable } from 'rxjs';
+import { Customer } from '../models/customer';
 
 @Injectable({
     providedIn: 'root'
@@ -16,7 +18,7 @@ export class UserService{
     private readonly baseUrl = environment.baseUri + 'Customer/';
     decodeToken: any;
 
-    formModel = this.fb.group({
+    formModel = this.fb.group({ 
         customername: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         address: [''],
@@ -26,6 +28,7 @@ export class UserService{
             confirmPassword: ['', Validators.required]
         }, {validator : this.comparePasswords})
     }); 
+    loggedInUser : Customer ;
 
     comparePasswords(fg : FormGroup){
         let confirmPasswordCtrl = fg.get('confirmPassword');
@@ -58,8 +61,17 @@ export class UserService{
                         const token  = res;
                         if(token){
                             localStorage.setItem('token',JSON.stringify(token));
+                            //console.log(formData.email);
+                            localStorage.setItem('email',formData.email);
                             this.decodeToken = token;
                             console.log(this.decodeToken);
+                            //get user details
+                            this.getUserDetails(formData.email).subscribe((customer:Customer)=>{
+                                this.loggedInUser = customer;
+                                localStorage.setItem('customer', JSON.stringify(this.loggedInUser));
+                                console.log(this.loggedInUser);
+                                console.log(this.loggedInUser.email);
+                            });
                         }
                     })
                 );
@@ -69,5 +81,10 @@ export class UserService{
         const token = localStorage.getItem('token');
         console.log("saved val : ", JSON.parse(token));
         return !this.JwtHelper.isTokenExpired(token);
+    }
+
+    getUserDetails(email : string) : Observable<Customer>{
+        //console.log("In");
+        return this.httpClient.get<Customer>(this.baseUrl + email);
     }
 }

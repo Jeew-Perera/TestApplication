@@ -11,6 +11,7 @@ namespace DataAccessLayer.UnitOfWork
         private IProductRepository _productRepository;
         private ICategoryRepository _categoryRepository;
         private ICustomerRepository _customerRepository;
+        private IOrderRepository _orderRepository;
 
         public UnitOfWork(ShoppingCartContext shoppingCartContext, IMapper iMapper)
         {
@@ -22,7 +23,7 @@ namespace DataAccessLayer.UnitOfWork
         {
             get
             {
-                return _productRepository = _productRepository ?? new ProductRepository(_context,_iMapper);
+                return _productRepository = _productRepository ?? new ProductRepository(_context, _iMapper);
             }
         }
 
@@ -39,6 +40,14 @@ namespace DataAccessLayer.UnitOfWork
             get
             {
                 return _customerRepository = _customerRepository ?? new CustomerRepository(_context, _iMapper);
+            }
+        }
+
+        public IOrderRepository OrderRepository
+        {
+            get
+            {
+                return _orderRepository = _orderRepository ?? new OrderRepository(_context, _iMapper);
             }
         }
 

@@ -55,5 +55,13 @@ namespace WebAPI.Controllers
             CustomerProfileDto user = await _iCustomerManager.GetProfileDetails(email);
             return user;
         }
+
+        [HttpGet("{email}")]
+        //[Authorize]
+        public async Task<CustomerProfileDto> Get(string email)
+        {
+            CustomerProfileDto user = await _iCustomerManager.GetProfileDetails(email);
+            return user;
+        }
     }
 }

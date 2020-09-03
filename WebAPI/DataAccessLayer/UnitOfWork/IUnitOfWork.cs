@@ -7,6 +7,7 @@ namespace DataAccessLayer.UnitOfWork
         IProductRepository ProductRepository { get; }
         ICategoryRepository CategoryRepository { get; }
         ICustomerRepository CustomerRepository { get; }
+        IOrderRepository OrderRepository { get; }
         Task Commit();
         void Rollback();
     }

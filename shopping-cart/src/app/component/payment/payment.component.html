@@ -24,7 +24,7 @@
                                 <th class="order-details-body">{{ (cartItem.unitPrice * cartItem.quantity) | currency :'LKR '}}</th>
                             </tr>
                             <tr>
-                                Grand Total {{ getCartTotal()}}
+                                <b>Grand Total: {{ getCartTotal()}} </b>
                             </tr>
                         </tbody>
                     </table>
@@ -38,62 +38,77 @@
                 <h2>Payment Details</h2>
             </div>
             <div class="card-body">
-                <form autocomplete="off">
+                <form autocomplete="off" [formGroup]="paymentFormModel" (submit)="onPay()">
                     <div class="row">
                         <div class="col-md-6">
                             <h6>Billing Details</h6>
                             <label>Name</label>
-                            <input class="form-control" [readonly]="true" value="Jeew"/><br/>
+                            <input class="form-control" [readonly]="true" value="{{name}}"/><br/>
                             <label>Email</label>
-                            <input class="form-control" [readonly]="true" value="r.jeewperera@gmail.com"/><br/>
+                            <input class="form-control" [readonly]="true" value="{{email}}" #myEmail/><br/>
                             <label>Address</label>
-                            <input class="form-control" [readonly]="true" value="Kadawatha"/><br/>
+                            <input class="form-control" [readonly]="true" value="{{address}}"/><br/>
                             <label>Phone</label>
-                            <input class="form-control" [readonly]="true" value="0772349240"/><br/>
+                            <input class="form-control" [readonly]="true" value="{{phone}}"/><br/>
                             <label>
-                                <input type="checkbox"/> Same Receiver Details
+                                <input type="checkbox" (change)="onCheckboxChange($event)"/> Receiver details equal to billing details
                             </label>
                             
                         </div>
                         <div class="col-md-6">
                             <h6>Receiver Details</h6>
-                            <label>Name</label>
-                            <input class="form-control" value="Jeew"/><br/>
-                            <label>Address</label>
-                            <input class="form-control" value="Kadawatha"/><br/>
-                            <label>Phone</label>
-                            <input class="form-control" value="0705823543"/><br/>
+                            <div class="form-group required">
+                                <label>Name</label>
+                                <input class="form-control" id="recName" formControlName="receivername" value="abc"/><br/>
+                                <label class="text-danger" *ngIf="paymentFormModel.get('receivername').touched && paymentFormModel.get('receivername').errors?.required">Receiver name is required!</label>
+                            </div>
+                            <div class="form-group required">
+                                <label>Address</label>
+                                <input class="form-control" id="recAddress" formControlName="receiveraddress"/><br/>
+                                <label class="text-danger" *ngIf="paymentFormModel.get('receiveraddress').touched && paymentFormModel.get('receiveraddress').errors?.required">Receiver address is required!</label>
+                            </div>
+                            <div class="form-group required">
+                                <label>Phone</label>
+                                <input class="form-control" id="recPhone" formControlName="receiverphone"/><br/>
+                                <label class="text-danger" *ngIf="paymentFormModel.get('receiverphone').touched && paymentFormModel.get('receiverphone').errors?.required">Phone is required!</label>
+                            </div>
                         </div>
                     </div>
                     <hr/>
                     <h6>Card Details</h6>
                     <div class="form-group required">
-                         <!-- <mat-radio-group aria-label="Select an option">
-                            <mat-radio-button>Option 1</mat-radio-button>
-                            <mat-radio-button>Option 2</mat-radio-button>
-                          </mat-radio-group>
-                          <br/>  -->
                         <label>Card Type</label>
-                        <br/>
-                        <input type="radio" value="Visa"/>
-                        <label>Visa</label>
-                        <input type="radio" value="Master"/>
-                        <label>Master</label>
+                        <div class="form-control">
+                            <label class="radio-inline">
+                                <input type="radio" value="visa" name="cardtype" formControlName="cardtype">
+                                Visa
+                            </label>
+                            <label class="radio-inline" style="padding-left: 30px;">
+                                <input type="radio" value="master" name="cardtype" formControlName="cardtype">
+                                Master
+                            </label>
+                        </div>
+                        <label class="text-danger" *ngIf="paymentFormModel.get('cardtype').touched && paymentFormModel.get('cardtype').errors?.required">Card type is required!</label>
                     </div>
                     <div class="form-group required">
                         <label>Card Number</label>
-                        <input class="form-control"/>
+                        <input class="form-control" formControlName="cardnumber"/>
+                        <label class="text-danger" *ngIf="paymentFormModel.get('cardnumber').touched && paymentFormModel.get('cardnumber').errors?.required">Card number is required!</label>
                     </div>
                     <div class="form-group required">
                         <label>Expiration Date</label>
-                        <input class="form-control"/>
+                        <input class="form-control" formControlName="expdate" placeholder="mm/yyyy"/>
+                        <label class="text-danger" *ngIf="paymentFormModel.get('expdate').touched && paymentFormModel.get('expdate').errors?.required">Expiration date is required!</label>
                     </div>
                     <div class="form-group required">
                         <label>CVN</label>
-                        <input class="form-control"/>
+                        <input class="form-control" formControlName="cvnnumber"/>
+                        <label class="text-danger" *ngIf="paymentFormModel.get('cvnnumber').touched && paymentFormModel.get('cvnnumber').errors?.required">Expiration date is required!</label>
                     </div>
-                    <button type="submit" class="btn btn-outline-secondary btn-block" [routerLink]="['/cart']">Cancel</button>
-                    <button type="submit" class="btn btn-primary btn-block">Pay</button>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-outline-secondary product-btn" style="width: 50%;" [routerLink]="['/cart']">Cancel</button> 
+                        <button type="button" class="btn btn-primary product-btn" style="width: 50%;" type="submit" [disabled]="!paymentFormModel.valid">Pay</button>
+                    </div>
                 </form>
             </div>
         </div>
