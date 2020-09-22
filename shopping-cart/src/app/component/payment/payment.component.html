@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="contentToConvert">
     <div class="col-md-5">
         <div class="guest-form-card card">
             <div class="card-header text-center">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <hr/>
-                    <h6>Card Details</h6>
+                    <!-- <h6>Card Details</h6>
                     <div class="form-group required">
                         <label>Card Type</label>
                         <div class="form-control">
@@ -104,7 +104,7 @@
                         <label>CVN</label>
                         <input class="form-control" formControlName="cvnnumber"/>
                         <label class="text-danger" *ngIf="paymentFormModel.get('cvnnumber').touched && paymentFormModel.get('cvnnumber').errors?.required">Expiration date is required!</label>
-                    </div>
+                    </div> -->
                     <div class="d-flex justify-content-between align-items-center">
                         <button type="button" class="btn btn-outline-secondary product-btn" style="width: 50%;" [routerLink]="['/cart']">Cancel</button> 
                         <button type="button" class="btn btn-primary product-btn" style="width: 50%;" type="submit" [disabled]="!paymentFormModel.valid">Pay</button>

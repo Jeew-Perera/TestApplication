@@ -24,5 +24,9 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Template\Invoice.html" />
+  </ItemGroup>
+
 
 </Project>

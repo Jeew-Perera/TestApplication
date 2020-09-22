@@ -7,7 +7,7 @@ namespace EntityLayer.OrderDto
 {
     public class OrderDto
     {
-        //public int OrderId { get; set; }
+        public int OrderId { get; set; }
         public CustomerProfileDto BillingDetails { get; set; }
         public string ReceiverName { get; set; }
         public string ReceiverAddress { get; set; }
@@ -16,7 +16,6 @@ namespace EntityLayer.OrderDto
         public DateTime OrderDate { get; set; }
         public int OrderTotal { get; set; }
         //public CardDto cardDetails { get; set; }
-        public PaymentDto cardDetails { get; set; }
-
+        //public PaymentDto cardDetails { get; set; }
     }
 }

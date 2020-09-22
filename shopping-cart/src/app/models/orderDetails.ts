@@ -11,9 +11,9 @@ export class OrderDetails {
     orderedProducts : cartItem[];
     orderDate: Date;
     orderTotal: number;
-    cardDetails : PaymentDetails;
+    //cardDetails : PaymentDetails;
 
-    constructor(billingDetails, receiverName, receiverAddress, receiverPhone, orderedProducts, orderDate, orderTotal, cardDetails) {
+    constructor(billingDetails, receiverName, receiverAddress, receiverPhone, orderedProducts, orderDate, orderTotal) {
         this.billingDetails = billingDetails;
         this.receiverName = receiverName;
         this.receiverAddress = receiverAddress;
@@ -21,6 +21,6 @@ export class OrderDetails {
         this.orderedProducts = orderedProducts;
         this.orderDate = orderDate;
         this.orderTotal =orderTotal;
-        this.cardDetails = cardDetails;
+        //this.cardDetails = cardDetails;
     }
 }

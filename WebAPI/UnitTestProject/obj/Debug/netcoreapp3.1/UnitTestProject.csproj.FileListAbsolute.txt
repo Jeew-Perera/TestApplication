@@ -255,3 +255,6 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\UnitTestProject\obj\Debug\ne
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\UnitTestProject\obj\Debug\netcoreapp3.1\UnitTestProject.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\UnitTestProject\obj\Debug\netcoreapp3.1\UnitTestProject.pdb
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\UnitTestProject\obj\Debug\netcoreapp3.1\UnitTestProject.genruntimeconfig.cache
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\UnitTestProject\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\UnitTestProject\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\UnitTestProject\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

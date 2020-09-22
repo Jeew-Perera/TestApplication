@@ -78,6 +78,7 @@ namespace WebAPI
             services.AddScoped<ICategoryManager, CategoryManager>();
             services.AddScoped<ICustomerManager, CustomerManager>();
             services.AddScoped<IOrderManager, OrderManager>();
+            services.AddScoped<IEmailSender, EmailSender>();
 
             services.AddDbContext<ShoppingCartContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("JeewConnection"), b => b.MigrationsAssembly("WebAPI"))

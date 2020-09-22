@@ -28,6 +28,7 @@ import { UserService } from './services/user.service';
 import { ProfileComponent } from './component/profile/profile.component';
 import { MainCartComponent } from './component/main-cart/main-cart.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { PaymentHistoryComponent } from './component/payment-history/payment-history.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PaymentComponent } from './component/payment/payment.component';
     ProfileComponent,
     MainCartComponent,
     PaymentComponent,
+    PaymentHistoryComponent,
   ],
   imports: [
     BrowserModule,

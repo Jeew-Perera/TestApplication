@@ -9,6 +9,7 @@ import { Customer } from 'src/app/models/customer';
 import { PaymentDetails } from 'src/app/models/paymentDetails';
 import { PaymentService } from 'src/app/services/payment.service';
 import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-payment',
@@ -23,18 +24,19 @@ export class PaymentComponent implements OnInit {
   email : string;
   address : string;
   phone : number;
-  loggedincustomer : Customer
+  loggedincustomer : Customer;
   orderDetails : any = {};
-  cardDetails : PaymentDetails;
+  private subscription : Subscription ;
+  //cardDetails : PaymentDetails;
 
   paymentFormModel = this.fb.group({ 
     receivername: ['', Validators.required],
     receiveraddress: ['', Validators.required],
     receiverphone: ['', Validators.required],
-    cardtype: ['',Validators.required],
-    cardnumber: ['',Validators.required],
-    expdate: ['',Validators.required],
-    cvnnumber: ['',Validators.required],
+    // cardtype: ['',Validators.required],
+    // cardnumber: ['',Validators.required],
+    // expdate: ['',Validators.required],
+    // cvnnumber: ['',Validators.required],
   });
 
   constructor(public userService :UserService, private cartService: CartService, 
@@ -42,7 +44,13 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.loggedIn()){
-      this.cartItems = this.cartService.getCartItems();
+      //this.cartItems = this.cartService.getCartItems();
+      this.cartService.updateCartState();
+      this.subscription = this.cartService.cartSubject
+                    .subscribe((c: cartItem[]) => {
+                        this.cartItems = c;
+                    });
+      //
       var retrivedCustomerDetails = localStorage.getItem('customer');
       const cusDetails = JSON.parse(retrivedCustomerDetails);
       this.id = cusDetails['customerId'];
@@ -53,6 +61,7 @@ export class PaymentComponent implements OnInit {
       this.loggedincustomer = new Customer(this.id,this.email,this.name,this.address,this.phone);
     }
     else{
+      console.log('Nt logged in');
       this.router.navigateByUrl('/login');
     }
   }
@@ -85,11 +94,12 @@ export class PaymentComponent implements OnInit {
   }
 
   onPay(){
-    var order = this.setOrderDetails();
-    //console.log(order);
+    var order = this.setOrderDetails(); 
+    
     this.paymentService.saveOrder(order).subscribe( 
       next => {
         this.toastr.success('Order placed successfully','Message');
+        this.router.navigateByUrl('/paymentHistory');
       },
       error => {
         this.toastr.error('Error in order placing, please try again later','Error');
@@ -99,7 +109,7 @@ export class PaymentComponent implements OnInit {
   }
 
   setOrderDetails(): OrderDetails{
-    this.cardDetails = new PaymentDetails(this.paymentFormModel.value.cardtype,this.paymentFormModel.value.cardnumber,this.paymentFormModel.value.expdate,this.paymentFormModel.value.cvnnumber);
+    //this.cardDetails = new PaymentDetails(this.paymentFormModel.value.cardtype,this.paymentFormModel.value.cardnumber,this.paymentFormModel.value.expdate,this.paymentFormModel.value.cvnnumber);
 
     this.orderDetails.billingDetails = this.loggedincustomer;
     this.orderDetails.receiverName = this.paymentFormModel.value.receivername;
@@ -108,8 +118,12 @@ export class PaymentComponent implements OnInit {
     this.orderDetails.orderedProducts = this.cartItems;
     this.orderDetails.orderDate = new Date().toDateString();
     this.orderDetails.orderTotal = this.cartService.getCartTotal();
-    this.orderDetails.cardDetails = this.cardDetails;
+    //this.orderDetails.cardDetails = this.cardDetails;
     return this.orderDetails;
   }
+
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 
 }

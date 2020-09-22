@@ -23,7 +23,7 @@ namespace DataAccessLayer.Helpers
 
             CreateMap<OrderDto, Order>()
                 .ForMember(des => des.OrderProduct, opt => opt.MapFrom(src => src.OrderedProducts))
-                .ForMember(des => des.Payment, opt => opt.MapFrom(src => src.cardDetails))
+                //.ForMember(des => des.Payment, opt => opt.MapFrom(src => src.cardDetails))
                 .ForMember(des => des.ShippingAddress, opt => opt.MapFrom(src => src.ReceiverAddress))
                 .ForMember(des => des.CustomerId, opt => opt.MapFrom(src => src.BillingDetails.CustomerId))
                 .ReverseMap();

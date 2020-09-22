@@ -14,7 +14,6 @@ C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\BusinessLayer\bin\Debug\
 C:\Users\hp\Desktop\Jeew babi\Assignmnet Ready\3\WebAPI\BusinessLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.AssemblyInfoInputs.cache
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.AssemblyInfo.cs
-C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.deps.json
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
@@ -26,3 +25,4 @@ C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netc
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CopyComplete
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.dll
 C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.pdb
+C:\Users\hp\Documents\GitHub\TestApplication\WebAPI\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CoreCompileInputs.cache

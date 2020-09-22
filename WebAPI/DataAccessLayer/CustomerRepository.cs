@@ -28,7 +28,6 @@ namespace DataAccessLayer
             customer.Salt = salt;
 
             await _context.Customer.AddAsync(customer);
-            //await _context.SaveChangesAsync();
 
             return customerForRegisterDto;
         }

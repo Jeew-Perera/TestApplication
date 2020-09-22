@@ -4,6 +4,7 @@ import { MessengerService } from 'src/app/services/messenger.service'
 import { CartService } from 'src/app/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { cartItem } from 'src/app/models/cartItem';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-product-item',
@@ -20,17 +21,31 @@ export class ProductItemComponent implements OnInit {
   constructor(private message:MessengerService, private cartService: CartService, private toastr : ToastrService) { }
 
   ngOnInit(): void {
-    this.cartHasItems = this.cartService.checkCartHasItems();
-    if(this.cartHasItems){
-     this.cart = this.cartService.getCartItems();
-     this.cart.forEach(item =>
-      {
-         if(item.productId == this.productItem.productId)
-          this.productItem.userEnteredCount = item.quantity;
-      });
-    }
-    console.log(this.productItem); 
+    //this.cartHasItems = this.cartService.checkCartHasItems();
+    // if(this.cartHasItems){
+    //  this.cart = this.cartService.getCartItems();
+    //  this.cart.forEach(item =>
+    //   {
+    //      if(item.productId == this.productItem.productId)
+    //       this.productItem.userEnteredCount = item.quantity;
+    //   });
+    // }
+    // console.log(this.productItem);
     
+    const localStorageCart = JSON.parse(localStorage.getItem('currentCart'));
+    console.log(localStorageCart);
+    if(localStorageCart != null){
+          localStorageCart.forEach(item =>
+          {
+             if(item.productId == this.productItem.productId)
+              this.productItem.userEnteredCount = item.quantity;
+          });
+      // for(let i=0; i<localStorageCart; i++){
+      //   if(this.productItem.productId == localStorageCart[i].productId){
+      //     this.productItem.userEnteredCount = localStorageCart[i].quantity;
+      //   }
+      // }
+    }
   }
 
   handleAddToCart(){

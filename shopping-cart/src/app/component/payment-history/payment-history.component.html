@@ -1,0 +1,70 @@
+<div *ngIf="orderDetails.length === 0" class="alert alert-info">No orders to display.</div>
+
+<div class="pb-5" *ngIf="orderDetails.length !== 0">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="guest-form-card card">
+                <div class="card-header text-center">
+                    <h2>Your Order History</h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-sm">
+                            <thead>
+                                <tr class="orderDetailsTableHeader">
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Item Name</th>
+                                    <th>Unit Price</th>
+                                    <th>Quantity</th>
+                                    <th>Sub Total</th>
+                                    <th>Order Total</th>
+                                    <th>Delivery Details</th>
+                                </tr>
+                                
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let order of orderDetails">
+                                    <th class="orderDetailsTableBody">
+                                        {{ order.orderId }}
+                                    </th>
+                                    <th class="orderDetailsTableBody">{{order.orderDate}}</th>
+                                    <th class="orderDetailsTableBody">{{order.productName}}</th>
+                                    <th class="orderDetailsTableBody">{{order.unitPrice}}</th>
+                                    <th class="orderDetailsTableBody">{{order.quantity}}</th>
+                                    <th class="orderDetailsTableBody">{{order.unitPrice * order.quantity}}</th>
+                                    <th class="orderDetailsTableBody">{{order.orderTotal}}</th>
+                                    <th class="orderDetailsTableBody">{{order.shippingAddress}}</th>
+                                    <hr>
+                                </tr>
+                                <tr>
+                                    <!-- <b>Grand Total: {{ getCartTotal()}} </b> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-7">
+            <div class="guest-form-card card">
+                <div class="card-header text-center">
+                    <h2>Payment Details</h2>
+                </div>
+                <div class="card-body">
+                    <form autocomplete="off">
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6">
+                            </div>
+                        </div>
+                        <hr/>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+

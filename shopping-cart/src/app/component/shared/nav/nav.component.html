@@ -5,7 +5,7 @@
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-dark" [routerLink]="['/products']">Products</a>
       <a class="p-2 text-dark" [routerLink]="['/cart']">Cart</a>
-      <a class="p-2 text-dark" href="#">Payment History</a>
+      <a class="p-2 text-dark" *ngIf="loggedIn()" [routerLink]="['/paymentHistory']">Payment History</a>
       <a class="p-2 text-dark" *ngIf="loggedIn()" href="#">Logged in as {{ getUserEmail() }}</a>
     </nav>
     <a class="btn btn-primary" [routerLink]="['/register']">Sign up</a>

@@ -38,7 +38,7 @@
                     </div>
                   </th>
                   <td class="border-0 align-middle"><strong>{{cartItem.unitPrice | currency:'LKR '}}</strong></td>
-                  <td class="border-0 align-middle"><strong><input type="number" min="1" max="10" value="{{cartItem.quantity}}" [(ngModel)]="cartItem.quantity"></strong></td>
+                  <td class="border-0 align-middle"><strong><input type="number" min="1" max="10" value="{{cartItem.quantity}}" [(ngModel)]="cartItem.quantity" (ngModelChange)="changeQty($event,cartItem)"></strong></td>
                   <td class="border-0 align-middle"><strong><span>{{ (cartItem.unitPrice * cartItem.quantity) | currency :'LKR '}}</span></strong></td>
                   <td class="border-0 align-middle"><a href="#" (click)="removeCartItem(cartItem)"><img style="width:20px;height:20px" src="assets/img/bin_icon.png"></a></td>
                 </tr>
